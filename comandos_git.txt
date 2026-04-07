@@ -1,0 +1,9 @@
+git init
+git config --global user.name (nomedousuario)
+git config --global user.email (emaildousuario)
+git config --list
+git remote add origin https://github.com/eversonmarquesjunior/meuprojeto.git
+git add *.*
+git commit -m "primeira_versao"
+git push -u origin master
+git remote rm origin
