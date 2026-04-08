@@ -67,17 +67,15 @@ document.getElementById('cancelBtn').addEventListener('click', closeModal);
 document.getElementById('modalBackdrop').addEventListener('click', closeModal);
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-/* Conversão automática para maiúsculas em campos de texto */
+/* Conversão automática para maiúsculas em campos de texto (apenas inputs text) */
 _form.addEventListener('input', e => {
-  const input = e.target;
-  if (input.tagName !== 'INPUT' || input.type !== 'text') return;
-
-  const start = input.selectionStart;
-  const end = input.selectionEnd;
-  input.value = input.value.toUpperCase();
-  if (start !== null && end !== null) {
-    input.setSelectionRange(start, end);
-  }
+  const target = e.target;
+  if (target.tagName !== 'INPUT' || target.type !== 'text') return;
+  
+  const start = target.selectionStart;
+  const end = target.selectionEnd;
+  target.value = target.value.toUpperCase();
+  target.setSelectionRange(start, end);
 });
 
 /* Submissão do formulário — add ou update */
