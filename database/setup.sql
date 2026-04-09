@@ -14,7 +14,7 @@
 CREATE TABLE IF NOT EXISTS public.disciplinas (
   id          TEXT          PRIMARY KEY,
   nome        TEXT          NOT NULL,
-  codigo      TEXT          NOT NULL,
+  modelo      TEXT          NOT NULL,
   status      TEXT          NOT NULL DEFAULT 'curadoria'
                             CHECK (status IN ('curadoria', 'insercao', 'ajustes', 'concluida')),
   curador     TEXT          NOT NULL DEFAULT '',
@@ -56,6 +56,8 @@ ON CONFLICT (username) DO NOTHING;
 -- senha: 123
 
 
+
+
 -- ── 2. Índice de busca por status (melhora performance de filtros) ──
 CREATE INDEX IF NOT EXISTS idx_disciplinas_status
   ON public.disciplinas (status);
@@ -93,7 +95,7 @@ CREATE POLICY "acesso_anonimo_total"
 
 -- ── 5. Dados de exemplo (seed) ───────────────────────────────
 INSERT INTO public.disciplinas
-  (id, nome, codigo, status, curador, insersor, link_moodle, link_teams, created_at)
+  (id, nome, modelo, status, curador, insersor, link_moodle, link_teams, created_at)
 VALUES
   ('s1','Fundamentos de Programação','CC001','concluida','Ana Silva','Carlos Mendes',
    'https://moodle.exemplo.com/course/1','https://teams.microsoft.com/l/channel/example1',

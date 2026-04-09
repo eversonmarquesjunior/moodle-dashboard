@@ -31,7 +31,7 @@ function openModal(discipline = null) {
     _title.textContent = 'Editar Disciplina';
     _f('editId').value          = discipline.id;
     _f('fieldNome').value       = discipline.nome;
-    _f('fieldCodigo').value     = discipline.codigo;
+    _f('fieldCodigo').value     = discipline.modelo || '';
     _f('fieldStatus').value     = discipline.status;
     _f('fieldCurador').value    = discipline.curador   || '';
     _f('fieldInsersor').value   = discipline.insersor  || '';
@@ -88,7 +88,7 @@ _form.addEventListener('submit', async e => {
   const entry = {
     id        : id || genId(),
     nome      : _f('fieldNome').value.trim(),
-    codigo    : _f('fieldCodigo').value.trim(),
+    modelo    : _f('fieldCodigo').value.trim(),
     status    : _f('fieldStatus').value,
     curador   : _f('fieldCurador').value.trim(),
     insersor  : _f('fieldInsersor').value.trim(),

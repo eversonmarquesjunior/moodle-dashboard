@@ -265,14 +265,19 @@
         <div>
           <label class="form-label">Nome da Disciplina <span class="text-red-500">*</span></label>
           <input id="fieldNome" type="text" required maxlength="150" class="form-input"
-            placeholder="Ex: Fundamentos de Programação" />
+             />
         </div>
 
         <div class="grid grid-cols-2 gap-4">
-          <div>
-            <label class="form-label">Código <span class="text-red-500">*</span></label>
-            <input id="fieldCodigo" type="text" required maxlength="20" class="form-input"
-              placeholder="Ex: CC001" />
+<div>
+            <label class="form-label">Modelo da Disciplina <span class="text-red-500">*</span></label>
+            <select id="fieldCodigo" required class="form-input bg-white">
+              <option value="">Selecione o modelo…</option>
+              <option value="GRADUAÇÃO">GRADUAÇÃO</option>
+              <option value="PÓS-GRADUAÇÃO">PÓS-GRADUAÇÃO</option>
+              <option value="CURSO RÁPIDO">CURSO RÁPIDO</option>
+              <option value="OUTRO">OUTRO</option>
+            </select>
           </div>
           <div>
             <label class="form-label">Status <span class="text-red-500">*</span></label>
@@ -299,7 +304,7 @@
             <label class="form-label">Responsável Inserção</label>
             <select id="fieldInsersor" class="form-input bg-white">
               <option value="" selected disabled>Selecione o insersor...</option>
-<option value="JUNIOR">JUNIOR</option>
+              <option value="JUNIOR">JUNIOR</option>
               <option value="LUCAS">LUCAS</option>
               <option value="PEDRO">PEDRO</option>
               <option value="STEFANYE">STEFANYE</option>
@@ -311,13 +316,13 @@
         <div>
           <label class="form-label">Link Moodle / Inova</label>
           <input id="fieldLinkMoodle" type="url" class="form-input"
-            placeholder="https://moodle.exemplo.com/course/1" />
+             />
         </div>
 
         <div>
           <label class="form-label">Link Teams / Curadoria</label>
           <input id="fieldLinkTeams" type="url" class="form-input"
-            placeholder="https://teams.microsoft.com/…" />
+             />
         </div>
 
         <!-- Remover (apenas no modo edição) -->

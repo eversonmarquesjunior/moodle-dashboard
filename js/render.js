@@ -93,7 +93,7 @@ function cardHTML(d) {
           <div class="flex items-center gap-2 flex-wrap">
             <h3 class="text-sm font-bold text-slate-800 truncate">${esc(d.nome)}</h3>
             <code class="text-xs bg-slate-100 text-slate-500 px-2 py-0.5 rounded font-mono shrink-0">
-              ${esc(d.codigo)}
+              ${esc(d.modelo)}
             </code>
           </div>
           <div class="flex items-center gap-2 mt-2 flex-wrap">

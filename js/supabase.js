@@ -36,7 +36,7 @@ function fromDB(row) {
   return {
     id        : row.id,
     nome      : row.nome,
-    codigo    : row.codigo,
+    modelo    : row.modelo,
     status    : row.status,
     curador   : row.curador    ?? '',
     insersor  : row.insersor   ?? '',
@@ -56,7 +56,7 @@ function toDB(d) {
   return {
     id         : d.id,
     nome       : d.nome,
-    codigo     : d.codigo,
+    modelo     : d.modelo,
     status     : d.status,
     curador    : d.curador    || '',
     insersor   : d.insersor   || '',

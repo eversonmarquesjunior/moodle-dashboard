@@ -52,7 +52,7 @@ function getFiltered() {
     const matchSearch =
       !q                                                  ||
       d.nome.toLowerCase().includes(q)                   ||
-      d.codigo.toLowerCase().includes(q)                 ||
+      d.modelo.toLowerCase().includes(q)                 ||
       (d.curador  && d.curador.toLowerCase().includes(q)) ||
       (d.insersor && d.insersor.toLowerCase().includes(q));
 
