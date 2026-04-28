@@ -6,4 +6,4 @@ git remote add origin https://github.com/eversonmarquesjunior/meuprojeto.git
 git add *.*
 git commit -m "primeira_versao"
 git push -u origin master
-git remote rm origin
+git remote rm origin //remover repositório
