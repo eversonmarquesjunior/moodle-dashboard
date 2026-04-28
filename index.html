@@ -20,6 +20,16 @@
 
   <!-- Estilos customizados -->
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Dark mode: aplica antes de renderizar para evitar flash -->
+  <script>
+    (function () {
+      var dm = localStorage.getItem('darkMode');
+      if (dm === 'true' || (dm === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
 </head>
 <body class="bg-blue-50 min-h-screen">
 
@@ -43,12 +53,13 @@
             <p class="text-xs text-slate-400">Gestão de Disciplinas</p>
           </div>
         </div>
+
       </div>
     </div>
   </header>
 
   <div id="authBanner" class="hidden bg-white border border-slate-200 rounded-xl max-w-7xl mx-auto mt-4 p-3 text-sm flex items-center gap-3">
-    <span>Logado como: <strong id="authUser">nenhum</strong></span>   <button id="changeAccountBtn" class="flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-blue-600 bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-300 px-3 py-1.5 rounded-lg transition-all shadow-sm">Alterar Senha</button>    <button id="logoutBtn" class="flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-red-600 bg-white hover:bg-red-50 border border-slate-200 hover:border-red-300 px-3 py-1.5 rounded-lg transition-all shadow-sm">Sair</button>    <div class="ml-auto">
+    <span>Logado como: <strong id="authUser">nenhum</strong></span>   <button id="changeAccountBtn" class="flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-blue-600 bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-300 px-3 py-1.5 rounded-lg transition-all shadow-sm">Alterar Senha</button>    <button id="logoutBtn" class="flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-red-600 bg-white hover:bg-red-50 border border-slate-200 hover:border-red-300 px-3 py-1.5 rounded-lg transition-all shadow-sm">Sair</button>    <button id="darkModeToggle" class="flex items-center p-1.5 text-slate-500 hover:text-slate-700 bg-white hover:bg-slate-50 border border-slate-200 rounded-lg transition-all shadow-sm" title="Alternar modo escuro" aria-label="Alternar modo escuro"><svg id="iconMoon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg><svg id="iconSun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg></button>    <div class="ml-auto">
       <button
         id="addBtn"
         class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white
@@ -437,6 +448,29 @@
   <script src="js/notifications.js"></script>
   <script src="js/auth.js"></script>
   <script src="js/app.js"></script>
+
+  <!-- Dark mode toggle logic -->
+  <script>
+    (function () {
+      var btn      = document.getElementById('darkModeToggle');
+      var iconMoon = document.getElementById('iconMoon');
+      var iconSun  = document.getElementById('iconSun');
+
+      function syncIcons() {
+        var isDark = document.documentElement.classList.contains('dark');
+        iconMoon.classList.toggle('hidden',  isDark);
+        iconSun.classList.toggle('hidden',  !isDark);
+      }
+
+      syncIcons();
+
+      btn.addEventListener('click', function () {
+        var isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('darkMode', isDark);
+        syncIcons();
+      });
+    })();
+  </script>
 
 </body>
 </html>

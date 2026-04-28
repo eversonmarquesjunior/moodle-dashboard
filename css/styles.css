@@ -32,16 +32,16 @@
 
 /* ── Sombras coloridas específicas para cada status ──────────── */
 .stat-card[data-filter="curadoria"]:hover {
-  box-shadow: 0 8px 24px rgba(147, 51, 234, 0.3);
+  box-shadow: 0 0 0 2px rgba(147, 51, 234, 0.25), 0 8px 28px rgba(147, 51, 234, 0.45) !important;
 }
 .stat-card[data-filter="insercao"]:hover {
-  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3);
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.25), 0 8px 28px rgba(245, 158, 11, 0.45) !important;
 }
 .stat-card[data-filter="ajustes"]:hover {
-  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.3);
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.25), 0 8px 28px rgba(239, 68, 68, 0.45) !important;
 }
 .stat-card[data-filter="concluida"]:hover {
-  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25), 0 8px 28px rgba(16, 185, 129, 0.45) !important;
 }
 
 /* ── Animação de entrada do modal ────────────────────────────── */
@@ -201,4 +201,129 @@ select:focus-visible {
 #sendBtn {
   flex-shrink: 0;
 }
+
+/* ══════════════════════════════════════════════════════════════
+   DARK MODE — toggle via class="dark" no <html>
+══════════════════════════════════════════════════════════════ */
+
+/* ── Base ──────────────────────────────────────────────────── */
+.dark body             { background-color: #0f172a !important; color: #f1f5f9; }
+
+/* ── Backgrounds claros → escuros ─────────────────────────── */
+.dark .bg-white        { background-color: #1e293b !important; }
+.dark .bg-blue-50      { background-color: #0f172a !important; }
+.dark .bg-slate-50     { background-color: #162032 !important; }
+.dark .bg-slate-100    { background-color: #334155 !important; }
+
+/* ── Bordas ────────────────────────────────────────────────── */
+.dark .border-slate-200 { border-color: #334155 !important; }
+.dark .border-slate-100 { border-color: #2d3f55 !important; }
+
+/* ── Textos ────────────────────────────────────────────────── */
+.dark .text-slate-800  { color: #f1f5f9 !important; }
+.dark .text-slate-700  { color: #e2e8f0 !important; }
+.dark .text-slate-600  { color: #cbd5e1 !important; }
+.dark .text-slate-500  { color: #94a3b8 !important; }
+.dark .text-slate-400  { color: #cbd5e1 !important; }
+.dark .text-slate-300  { color: #475569 !important; }
+
+/* ── Badges de status ──────────────────────────────────────── */
+.dark .bg-amber-100    { background-color: rgba(180, 83,   9, 0.2) !important; }
+.dark .text-amber-600,
+.dark .text-amber-700  { color: #fbbf24 !important; }
+.dark .border-amber-200{ border-color: rgba(180, 83, 9, 0.35) !important; }
+
+.dark .bg-purple-100   { background-color: rgba(126,  34, 206, 0.2) !important; }
+.dark .text-purple-600,
+.dark .text-purple-700 { color: #c084fc !important; }
+.dark .border-purple-200{ border-color: rgba(126, 34, 206, 0.35) !important; }
+
+.dark .bg-red-100      { background-color: rgba(185,  28,  28, 0.2) !important; }
+.dark .text-red-600,
+.dark .text-red-700    { color: #f87171 !important; }
+.dark .border-red-200  { border-color: rgba(185, 28, 28, 0.35) !important; }
+
+.dark .bg-green-100    { background-color: rgba(  6,  95,  70, 0.2) !important; }
+.dark .text-green-600,
+.dark .text-green-700  { color: #34d399 !important; }
+.dark .border-green-200{ border-color: rgba(6, 95, 70, 0.35) !important; }
+
+.dark .bg-blue-100     { background-color: rgba( 29,  78, 216, 0.2) !important; }
+
+/* ── Hovers ────────────────────────────────────────────────── */
+.dark .hover\:bg-slate-50:hover  { background-color: #1a2438 !important; }
+.dark .hover\:bg-blue-50:hover   { background-color: rgba(37, 99, 235, 0.12) !important; }
+.dark .hover\:bg-red-50:hover    { background-color: rgba(185, 28, 28, 0.12) !important; }
+.dark .hover\:bg-slate-100:hover { background-color: #334155 !important; }
+.dark .hover\:border-blue-300:hover { border-color: #3b82f6 !important; }
+.dark .hover\:border-red-300:hover  { border-color: rgba(239, 68, 68, 0.5) !important; }
+.dark .hover\:text-blue-600:hover   { color: #60a5fa !important; }
+.dark .hover\:text-slate-600:hover  { color: #cbd5e1 !important; }
+.dark .hover\:text-slate-700:hover  { color: #e2e8f0 !important; }
+
+/* ── Labels dos formulários (classe customizada, não Tailwind) ── */
+.dark .form-label { color: #e2e8f0; }
+
+/* ── Inputs ────────────────────────────────────────────────── */
+.dark .form-input {
+  background-color: #0f172a;
+  border-color: #334155;
+  color: #f1f5f9;
+}
+.dark .form-input::placeholder   { color: #475569; }
+.dark .form-input:focus          { background-color: #0f172a; border-color: #3b82f6; }
+.dark select.form-input option,
+.dark #modeloFilter option       { background-color: #1e293b; color: #f1f5f9; }
+
+.dark #searchInput               { background-color: #1e293b; border-color: #334155; color: #f1f5f9; }
+.dark #searchInput::placeholder  { color: #475569; }
+
+/* ── Botões de filtro ──────────────────────────────────────── */
+.dark .filter-btn                { background: #1e293b; color: #94a3b8; border-color: #334155; }
+.dark .filter-btn:hover          { background: #334155; color: #e2e8f0; }
+.dark .filter-btn.active         { background: #2563eb; color: #fff; border-color: #2563eb; }
+
+/* ── Scrollbar ─────────────────────────────────────────────── */
+.dark ::-webkit-scrollbar-track  { background: #1e293b; }
+.dark ::-webkit-scrollbar-thumb  { background: #334155; }
+.dark ::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+/* ── Chat ──────────────────────────────────────────────────── */
+.dark .chat-messages             { background: #0f172a; border-color: #334155; }
+.dark .message-sender            { color: #94a3b8; }
+.dark .message-other             { background: #334155; border-color: #475569; color: #f1f5f9; }
+.dark .chat-input-container      { border-top-color: #334155; }
+
+/* ── Popup de notificação ──────────────────────────────────── */
+.dark .chat-notif-popup          { background: #1e293b !important; border-color: #334155 !important; }
+
+/* ── Spinner ───────────────────────────────────────────────── */
+.dark .spinner                   { border-color: #334155; border-top-color: #3b82f6; }
+
+/* ── Sombras ───────────────────────────────────────────────── */
+.dark .shadow-sm   { box-shadow: 0 1px 2px rgba(0,0,0,0.5) !important; }
+.dark .shadow-md   { box-shadow: 0 4px 6px rgba(0,0,0,0.5) !important; }
+.dark .shadow-2xl  { box-shadow: 0 25px 50px rgba(0,0,0,0.7) !important; }
+.dark .card-hover:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+
+/* ── Sombras coloridas das abas no dark mode ───────────────── */
+.dark .stat-card[data-filter="curadoria"]:hover {
+  box-shadow: 0 0 0 2px rgba(147, 51, 234, 0.35), 0 8px 28px rgba(147, 51, 234, 0.5) !important;
+}
+.dark .stat-card[data-filter="insercao"]:hover {
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.35), 0 8px 28px rgba(245, 158, 11, 0.5) !important;
+}
+.dark .stat-card[data-filter="ajustes"]:hover {
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.35), 0 8px 28px rgba(239, 68, 68, 0.5) !important;
+}
+.dark .stat-card[data-filter="concluida"]:hover {
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.35), 0 8px 28px rgba(16, 185, 129, 0.5) !important;
+}
+
+/* ── Bordas esquerdas coloridas dos cards (restaura no dark mode) ─
+   Vem DEPOIS de .dark .border-slate-200 para sobrescrever o shorthand */
+.dark .border-l-amber-500  { border-left-color: #f59e0b !important; }
+.dark .border-l-purple-500 { border-left-color: #a855f7 !important; }
+.dark .border-l-red-500    { border-left-color: #ef4444 !important; }
+.dark .border-l-green-500  { border-left-color: #22c55e !important; }
 
