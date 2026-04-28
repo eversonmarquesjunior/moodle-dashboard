@@ -1,0 +1,10 @@
+{
+  // Extensões recomendadas para este projeto.
+  // O VS Code sugere a instalação automaticamente ao abrir a pasta.
+  "recommendations": [
+    "ritwickdey.LiveServer",
+    "bradlc.vscode-tailwindcss",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint"
+  ]
+}
